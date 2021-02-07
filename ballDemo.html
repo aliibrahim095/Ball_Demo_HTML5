@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<style>
+    @keyframes sectionanimate1 {
+        25% {
+            top:0px;
+            left:420px;
+            background: -webkit-linear-gradient(top, rgb(255, 0, 0), rgb(235, 225, 226), rgb(247, 9, 9));
+        }
+
+        50% {
+            top:350px;
+            left:420px;
+        }
+
+        75% {
+            top:350px;
+            left:0px;
+        }
+
+        100% {
+            top: 0px;
+            left:0px;
+        }
+    }
+
+    @keyframes sectionanimate2 {
+        25% {
+            top:350px;
+            left:420px;
+        }
+
+        50% {
+            top:350px;
+            left:0px;
+        }
+
+        75% {
+            top:0px;
+            left:0px;
+        }
+
+        100% {
+            top:0px;
+            left:420px;
+        }
+    }
+
+    @keyframes sectionanimate3 {
+        25% {
+            top:350px;
+            left:0px;
+        }
+
+        50% {
+            top:0px;
+            left:0px;
+        }
+
+        75% {
+            top:0px;
+            left:420px;
+        }
+
+        100% {
+            top:350px;
+            left:420px;
+        }
+    }
+
+    @keyframes sectionanimate4 {
+        25% {
+            top:0px;
+            left:0px;
+        }
+
+        50% {
+            top:0px;
+            left:420px;
+        }
+
+        75% {
+            top:350px;
+            left:420px;
+        }
+
+        100% {
+            top:350px;
+            left:0px;
+        }
+    }
+    #mainwrapper{
+        margin:0 auto;
+        border: 1px solid pink;
+        width: 520px;
+        height: 450px;
+        position: relative;
+        background-color: white;
+        /* background:-webkit-linear-gradient(top,teal,tomato, teal); */
+        box-shadow: 5px 5px 10px magenta;
+    }
+
+    #ball1 {
+        width:100px;
+        height:100px;
+        top:0px;
+        left:0px;
+        position: absolute;
+    }
+    #ball2 {
+        width:100px;
+        height:100px;
+        top:0px;
+        left:420px;
+        position: absolute;
+    }
+    #ball3 {
+        width:100px;
+        height:100px;
+        top:350px;
+        left:420px;
+        position:absolute;
+    }
+    #ball4 {
+        width:100px;
+        height:100px;
+        top:350px;
+        left:0px;
+        position:absolute;
+    }
+    body {
+        background-color: silver;
+    }
+    #controlsdiv {
+        width:500px;
+        height:119px;
+        padding:10px;
+        background:-webkit-linear-gradient(left,teal,tomato, teal);
+
+        /* background-color: teal; */
+        border: 1px solid tomato;
+        margin: 0px auto;
+        text-align: center;
+    }
+    input:nth-child(odd) {
+        width: 120px;
+        height: 120px;
+        border: pink;
+        border-radius: 50%;
+        color: teal;
+        font: 20px bold;
+        background: -webkit-linear-gradient(top, rgb(170, 39, 230), rgb(235, 225, 226), rgb(197, 4, 171));
+    }
+    input:nth-child(even) {
+        width: 120px;
+        height: 120px;
+        border: pink;
+        border-radius: 50%;
+        color: teal;
+        font: 20px bold;
+        background: -webkit-linear-gradient(top, rgb(230, 39, 39), rgb(235, 225, 226), rgb(110, 12, 12));
+    }
+    .startanimate1 {
+        animation: sectionanimate1;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    .animationpaused1 {
+        animation-play-state: paused;
+    }
+    .startanimate2 {
+        animation: sectionanimate2;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    .animationpaused2 {
+        animation-play-state: paused;
+    }
+    .startanimate3 {
+        animation: sectionanimate3;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    .animationpaused3 {
+        animation-play-state: paused;
+    }
+    .startanimate4 {
+        animation: sectionanimate4;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    .animationpaused4 {
+        animation-play-state: paused;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    input {
+        transition: all 2s;
+    }
+    @keyframes rotation {
+        10% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    input:hover{
+        animation: rotation 1s;
+        color:darkgreen;
+    }
+    input:focus{
+        outline: none;
+    }
+    /* #mainwrapper{
+        margin: 10px auto;
+        border: 2px solid black;
+        width: 523px;
+        height: 600px;
+        background-color: brown;
+    } */
+
+    p{
+        width:520px;
+        margin:10px auto;
+        text-align: center;
+        color: brown;
+        font:15px;
+        background-color: white;
+        box-shadow: 5px 5px 10px magenta;
+    }
+    /* #divone{
+        transition: all 2s;
+    }
+    #divone:active{
+        transform: scale(0.8);
+    } */
+</style>
+<script>
+    window.onload = function () {
+
+        //get elements
+        ball1 = document.getElementsByTagName('section')[0];
+        ball2 = document.getElementsByTagName('section')[1];
+        ball3 = document.getElementsByTagName('section')[2];
+        ball4 = document.getElementsByTagName('section')[3];
+        startbtn = document.getElementsByTagName('input')[0];
+        stopbtn = document.getElementsByTagName('input')[1];
+        togglebtn = document.getElementsByTagName('input')[2];
+
+        startbtn.onclick = function () {
+            ball1.classList.add('startanimate1');
+            ball2.classList.add('startanimate2');
+            ball3.classList.add('startanimate3');
+            ball4.classList.add('startanimate4');
+        };
+        stopbtn.addEventListener('click', function () {
+            ball1.classList.remove('startanimate1');
+            ball2.classList.remove('startanimate2');
+            ball3.classList.remove('startanimate3');
+            ball4.classList.remove('startanimate4');
+        });
+        togglebtn.addEventListener('click', function () {
+            ball1.classList.toggle('animationpaused1');
+            ball2.classList.toggle('animationpaused2');
+            ball3.classList.toggle('animationpaused3');
+            ball4.classList.toggle('animationpaused4');
+            if (this.value == "pause") {
+                this.value = "resume";
+            }
+            else {
+                this.value = "pause";
+            }
+        });
+    };
+</script>
+<body>
+    <div id="divone">
+    <div id="controlsdiv">
+        <input type="button" value="start">
+        <input type="button" value="stop">
+        <input type="button" value="pause">
+    </div>
+    <div id="mainwrapper">
+        
+        <section id="ball1">
+            <img src="https://static3.depositphotos.com/1005574/249/v/950/depositphotos_2491822-stock-illustration-3d-crystal-sphere.jpg"/>
+        </section>
+        <section id="ball2">
+            <img src="https://st.depositphotos.com/1050267/1769/i/950/depositphotos_17691451-stock-photo-white-sphere-isolated-on-white.jpg"/>
+        </section>
+
+        <section id="ball3">
+            <img src="https://static8.depositphotos.com/1005574/1001/v/950/depositphotos_10011816-stock-illustration-3d-glass-sphere.jpg"/>
+        </section>
+        <section id="ball4">
+            <img src="https://static4.depositphotos.com/1005574/357/v/950/depositphotos_3573876-stock-illustration-glass-sphere.jpg"/>
+        </section>
+    </div>
+    <p>All Rights Reserved &copy; Ali Ibrahim</p>
+</div>
+</body>
+
+</html>
